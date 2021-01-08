@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<link href = "styles.css" rel= "stylesheet">
+<script defer src = "script.js"></script>
+<title> Dropweight Machine Stringing</title>
+
+</head>
+
+<body>
+
+<div class = "machine">
+    <div class = "bar">
+        
+    
+        <div class = "weight"></div>
+        
+        
+        
+        <div class = "hinge"></div>
+        <div class = "turner"></div>
+        <div class = "turnermouth">
+
+            <div class = "string"></div>
+        </div>
+    </div>
+    <div class = "loader">
+        <span style = "--i:1;"></span>
+        <span style = "--i:2;"></span>
+        <span style = "--i:3;"></span>
+        <span style = "--i:4;"></span>
+        <span style = "--i:5;"></span>
+        
+        </div>  
+</div>
+    
+
+
+</div>
+
+<div style = "position: absolute; left:1100px; top:2px;">
+    <h2 style="font-family:verdana"> Physics of A Dropweight</h2>
+    
+</div>
+
+
+<div style = "position: absolute; left:850px; top:80px; text-align: left;">
+    <div style = "font-family: 'Courier New', Courier, monospace">
+    <ul id = "data2">
+        <li>Thin Black Bar represents Arm</li>
+        <li>Red Circle represents the Hinge</li>
+        <li>Rectangle attached to Black Bar Represents The Attachable Weight</li>
+        <li>White Dot represents the point at which the string is attached</li>
+        <li>Yellow Circle and Green Rectangle represent the "gripper" that adjusts the tension on the string</li>
+        <li>Appearing White Circles represent the distance the string is stretched when the bar is lowered</li>
+
+      </ul>
+<p class="indented">
+    <HR>
+    The diagram on the right is that of a simplified dropweight stringing machine. The physics behind
+    a dropweight stringing machine are simple. Tension is applied to the string when the weight bar is 
+    horizontal, as the end of the hover animation would suggest. The gripper is spun in a clockwise direction 
+    to adjust the tension in the string until the tension bar is at a horizontal. When the bar is at a 
+    horizontal and has no acceleration, the system is at equilibrium which means the sum of torques is zero 
+    and solving for the tension in the string is a simple statics question. The tension in the string multiplied 
+    by the radius of the hinge has to equal the sum of moment of inertia of the bar multiplied by the acceleration 
+    of gravity and the moment of inertia of the weight multiplied by the acceleration of gravity. 
+    
+
+
+
+ </p>
+</div>
+</div>
+
+<div style = "position: relative; bottom: 300px; left: 180px">
+<h1> Dennis' Stringing Data</h1>
+
+    <h2> Stringing General </h2>
+</div>
+<div style = "position: relative; bottom: 250px; left:50px">
+  <p>
+    Hi, I'm Dennis and I've been stringing badminton rackets for just over a year. I string with a self modded <br> Gamma Progression II 
+    machine and at the time of publishing this website, I've strung over 140 rackets. <br> After starting my stringing service, I 
+    was met with positive reviews on Google of my stringing which really <br> kept me going 
+    <a href="https://www.google.com/maps/place/Dennis's+badminton+stringing+service/@43.6675899,-79.4285647,17z/data=!4m5!3m4!1s0x882b35d5936dd6cf:0x1af3cc7db8689407!8m2!3d43.6676986!4d-79.4270948" target="_blank">Reviews</a>. My machine is a 
+    <em> Dropweight Machine</em>
+    which means it uses torque created by <br> gravity to apply tension into the strings. Analysis of the mechanics are above.
+
+    <br><br> 
+    We even have our own YouTube channel dedicated to badminton!
+
+    <a href="https://www.youtube.com/channel/UCFeLMfzQ8PBegDR6LxE20Ww?view_as=subscriber" target="_blank">Learn More</a>
+    </p>
+</div>
+
+<div style = "position: relative; bottom:600px; left: 300px;text-align: center;">
+
+
+    <h1>Badminton Tension Frequency <br>
+        Calculator (In Progress)</h1>
+    <h2>
+        Based on Experimental Data with Yonex BG80 String</h2>
+
+    
+      <label for="quantity">Tension (between 20 and 30):</label>
+      <input type="number" step="0.1" id="quantity" name="quantity" min="20" max="30">
+      <button onclick = "frequency()">Get Tension in Pounds</button>
+      <h1 id ="answer"></h1>
+
+
+    
+    
+<script>
+function frequency(){
+
+var tension;
+var frequency = document.getElementById("quantity").value;
+if (frequency>=1000 && frequency<1100){
+    tension = 21;
+
+}
+else if(frequency>=1100&&frequency<1200){
+
+    tension = 24;
+}
+else if (frequency>=1200&&frequency<1260){
+
+tension = 28;
+
+}
+
+else if(frequency=>1260&&frequency<=1300){
+
+
+    tension = 1300;
+}
+
+
+document.getElementById("answer").innerHTML= "The estimated frequency is "+tension+ " pounds";
+
+
+}
+</script>
+
+
+
+</div>
+
+</body>
+</html>
