@@ -24,14 +24,7 @@
             <div class = "string"></div>
         </div>
     </div>
-    <div class = "loader">
-        <span style = "--i:1;"></span>
-        <span style = "--i:2;"></span>
-        <span style = "--i:3;"></span>
-        <span style = "--i:4;"></span>
-        <span style = "--i:5;"></span>
-        
-        </div>  
+    
 </div>
     
 
@@ -50,7 +43,9 @@
         <li>Thin Black Bar represents Arm</li>
         <li>Red Circle represents the Hinge</li>
         <li>Rectangle attached to Black Bar Represents The Attachable Weight</li>
-        <li>White Dot represents the point at which the string is attached</li>
+        <li>White Dot represents the point at which the string is attached and the distance it travels
+            is the length it is stretched
+        </li>
         <li>Yellow Circle and Green Rectangle represent the "gripper" that adjusts the tension on the string</li>
         <li>Appearing White Circles represent the distance the string is stretched when the bar is lowered</li>
 
@@ -97,15 +92,15 @@
 <div style = "position: relative; bottom:600px; left: 300px;text-align: center;">
 
 
-    <h1>Badminton Tension Frequency <br>
-        Calculator (In Progress)</h1>
+    <h1>Badminton Tension Recommendation <br>
+        </h1>
     <h2>
-        Based on Experimental Data with Yonex BG80 String</h2>
+        (Based on Skill)</h2>
 
     
-      <label for="quantity">Tension (between 20 and 30):</label>
-      <input type="number" step="0.1" id="quantity" name="quantity" min="20" max="30">
-      <button onclick = "frequency()">Get Tension in Pounds</button>
+      <label for="quantity">Player Skill in Tier (1-5 with 1 being competitive level player):</label>
+      <input type="number" step="0.1" id="quantity" name="quantity" min="1" max="5">
+      <button onclick = "frequency()">Recommended Tension in Pounds</button>
       <h1 id ="answer"></h1>
 
 
@@ -116,28 +111,35 @@ function frequency(){
 
 var tension;
 var frequency = document.getElementById("quantity").value;
-if (frequency>=1000 && frequency<1100){
-    tension = 21;
+
+
+if (frequency>=1 && frequency<2){
+    tension = 20;
+    document.getElementById("answer").innerHTML= "Your recommended tension is "+tension+ " pounds";
+}
+else if(frequency>=2 && frequency<3){
+
+    tension = 22;
+    document.getElementById("answer").innerHTML= "Your recommended tension is "+tension+ " pounds";
+}
+else if (frequency>= 3 && frequency<4){
+
+tension = 24;
+document.getElementById("answer").innerHTML= "Your recommended tension is "+tension+ " pounds";
+}
+else if (frequency<1 || frequency>5){
+    document.getElementById("answer").innerHTML= "Invalid Input";
 
 }
-else if(frequency>=1100&&frequency<1200){
-
-    tension = 24;
-}
-else if (frequency>=1200&&frequency<1260){
-
-tension = 28;
-
-}
-
-else if(frequency=>1260&&frequency<=1300){
+else if(frequency=>4 && frequency<=5){
 
 
-    tension = 1300;
+    tension = 26;
+    document.getElementById("answer").innerHTML= "Your recommended tension is anything equal or higher than "+ tension + " pounds";
 }
 
 
-document.getElementById("answer").innerHTML= "The estimated frequency is "+tension+ " pounds";
+
 
 
 }
@@ -146,6 +148,30 @@ document.getElementById("answer").innerHTML= "The estimated frequency is "+tensi
 
 
 </div>
+
+<div style = "position: relative; bottom:380px; left: 50px;text-align: left;">
+<h2>
+    Stringing Tips for New Stringers (dropweight)
+</h2>
+    <div style = "font-family: 'Courier New', Courier, monospace">
+    <ul id = "tips">
+        <li>Prevent compression of frame by pushing top of post out and bottom of post in before tightening screws</li>
+        <li>DO NOT STRETCH FRAME WHEN MOUNTING ONTO POSTS TENSION FROM STRINGS WILL DAMAGE THE FRAME</li>
+        <li>When adjusting tension with gripper, only adjust when tension bar is vertical</li>
+        <li>General rule is to string horizontals from bottom to top</li>
+        <li>If hybrid stringing, thicker string used for verticals and thinner strings used for horizontals</li>
+        <li>Straighten horizontals after tensioning due to fly clamps pulling them down</li>
+        <li>3.5 Armlengths for verticals and 3 armlengths for horizontals is a general rule if you're new</li>
+        <li>Double tension first 2 and last 2 horizontals with +2 tension</li>
+
+      </ul>
+    </div>
+
+</div>
+
+
+
+
 
 </body>
 </html>
